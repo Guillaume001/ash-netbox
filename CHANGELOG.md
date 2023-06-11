@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] 2023-06-11
+* Bump python version to 3.11 by default
+* Support RHEL 9
+* Does not support older version of RHEL under 8.8 (due of python version)
+
 ## [2.2.0] 2021-06-03
 * Fix, change package installs to ensure_packages(), so class can work with other manifests without resource dupes. [Fixes #11](https://github.com/anderssh/ash-netbox/issues/11)
 * Also fixed several tests that were failing.
