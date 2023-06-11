@@ -81,8 +81,8 @@ class netbox::install (
 
   $packages =[
     gcc,
-    python39,
-    python39-devel,
+    'python3.11',
+    'python3.11-devel',
     libxml2-devel,
     libxslt-devel,
     libffi-devel,
@@ -178,7 +178,7 @@ class netbox::install (
   }
 
   exec { "python_venv_${venv_dir}":
-    command => "/usr/bin/python3 -m venv ${venv_dir}",
+    command => "/usr/bin/python3.11 -m venv ${venv_dir}",
     user    => $user,
     creates => "${venv_dir}/bin/activate",
     cwd     => '/tmp',

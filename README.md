@@ -80,7 +80,7 @@ You also _need_ to set up a django superuser manually after installing. This is 
 # cd /opt/netbox
 # source venv/bin/activate
 (venv) # cd netbox
-(venv) # python3 manage.py createsuperuser
+(venv) # python3.11 manage.py createsuperuser
 Username: admin
 Email address: admin@example.com
 Password:
@@ -142,7 +142,7 @@ selinux::boolean { 'httpd_can_network_connect': }
 
   class { 'apache::mod::wsgi':
     mod_path     => '/usr/lib64/httpd/modules/mod_wsgi_python3.so',
-    package_name => 'python3-mod_wsgi',
+    package_name => 'python3.11-mod_wsgi',
   }
 
   apache::vhost { $trusted[certname]:
@@ -181,7 +181,7 @@ selinux::boolean { 'httpd_can_network_connect': }
 
 ## Limitations
 
-This module is only tested on RHEL/Centos8 at the moment, and will not work for Ubuntu family or older versions of EL just yet. 
+This module is only tested on RHEL/Centos 8.8 and 9.2 at the moment, and will not work for Ubuntu family or older versions of EL just yet.
 
 Upgrading from one version of Netbox to the next is not well tested, so you might need to do some manual steps that are explained in the Netbox documentation. 
 
